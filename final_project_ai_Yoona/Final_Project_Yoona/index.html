@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Can You Trust This AI?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Start Screen -->
+    <div id="start-screen">
+      <h1>🤖 Can You Trust This AI?</h1>
+      <p class="subtitle">
+        AI can be confidently wrong because of hallucinations.
+      </p>
+      <p class="description">
+        AI hallucinations occur when an AI model generates information that sounds confident but is factually false or misleading. They happen because models rely on patterns in training data, not true understanding. Even well designed systems can present incorrect outputs with high certainty, especially when the “temperature” or randomness is high. Understanding hallucinations is important because they influence trust, decision making, and how we use AI safely in everyday life.
+      </p>
+      <p class="subtitle">
+        With this in mind, can you spot all the hallucinations within the quiz?
+      </p>
+      <button class="btn start-btn" id="startBtn">Start Quiz</button>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div id="quiz-screen" class="hidden">
+      <div class="progress" id="progressText">Question 1 / 10</div>
+
+      <h2 id="questionText" class="question-text"></h2>
+
+      <div class="ai-answer-box">
+        <h3 class="ai-label">AI's answer:</h3>
+        <p id="aiAnswer" class="ai-answer"></p>
+      </div>
+
+      <div class="options">
+        <label class="option">
+          <input type="radio" name="answer" value="real" />
+          This seems accurate (Real)
+        </label>
+        <label class="option">
+          <input type="radio" name="answer" value="hallucination" />
+          This seems made up (Hallucination)
+        </label>
+      </div>
+
+      <button class="btn submit-btn" id="submitBtn" disabled>Submit</button>
+      <p id="feedback" class="feedback"></p>
+      <button class="btn next-btn hidden" id="nextBtn">Next Question</button>
+    </div>
+
+    <!-- Hallucination Info Screen -->
+    <div id="info-screen" class="hidden">
+      <h2>🤖 Why AI Hallucinations Matter</h2>
+      <p class="description">
+        AI hallucinations can spread false information, undermine trust, and create serious risks in high-stakes areas like healthcare, finance, and transportation. Because of this, developers have a responsibility to prioritize accuracy, transparency, and reliability. Users must remember that AI outputs should be approached with critical thinking and verification.
+      </p>
+
+      <button class="btn next-btn" id="toUsageBtn">Next</button>
+    </div>
+
+    <!-- ChatGPT Usage Screen -->
+    <div id="usage-screen" class="hidden">
+      <h2>💬 Use of ChatGPT</h2>
+      <p class="description">
+        Some quiz features like scoring logic and layout structuring were assisted by ChatGPT.
+        However, all design choices and written content were created by Yoona Shim.
+      </p>
+
+      <button class="btn next-btn" id="toSourcesBtn">Next</button>
+    </div>
+
+    <!-- Sources Screen -->
+    <div id="sources-screen" class="hidden">
+      <h2>📚 Sources</h2>
+      <p class="resource">
+        Resources used to research AI hallucinations:
+      </p>
+      <ul class="resource">
+        <li>Hallucination is inevitable: An innate limitation of large language models. 2401.11817. (2025, February 13). https://arxiv.org/pdf/2401.11817</li>
+        <li>Özer, M. (2024, October 14). Is artificial intelligence hallucinating?. Turk psikiyatri dergisi = Turkish journal of psychiatry. https://pmc.ncbi.nlm.nih.gov/articles/PMC11681264/ </li>
+        <li>Vega, M. de la. (2023, November 4). Understanding openai’s “Temperature” and “Top_p” parameters in language models. Medium. https://medium.com/@1511425435311/understanding-openais-temperature-and-top-p-parameters-in-language-models-d2066504684f </li>
+      </ul>
+
+      <button class="btn next-btn" id="continueToResultsBtn">Continue</button>
+    </div>
+
+    <!-- Result Screen -->
+    <div id="result-screen" class="hidden">
+      <h2>Your Score</h2>
+      <p id="scoreText" class="score-text"></p>
+      <p id="resultMessage" class="result-message"></p>
+      <button class="btn restart-btn" id="restartBtn">Play Again</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
